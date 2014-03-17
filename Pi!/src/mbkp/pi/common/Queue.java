@@ -1,5 +1,9 @@
 package mbkp.pi.common;
 
+/**
+ * @author Max
+ */
+
 import mbkp.pi.exceptions.QueueEmptyException;
 import mbkp.pi.exceptions.QueueFullException;
  

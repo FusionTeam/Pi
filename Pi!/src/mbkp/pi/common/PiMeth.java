@@ -1,5 +1,9 @@
 package mbkp.pi.common;
 
+/**
+ * @author Max
+ */
+
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 

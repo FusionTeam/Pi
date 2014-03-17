@@ -1,7 +1,7 @@
 /*package mbkp.pi.exceptions;
 
 /*
- * @author Maximilian Bloom
+ * @author Max
  * 
  * Exception if n is less than 0
  *

@@ -1,5 +1,9 @@
 package mbkp.pi.exceptions;
- 
+
+/**
+ * @author Max
+ */ 
+
 public class QueueEmptyException extends RuntimeException {
  
     /**
