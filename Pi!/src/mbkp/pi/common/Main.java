@@ -18,7 +18,7 @@ public class Main extends WritePiToFile{
 	public static void main(String[] args) throws IOException, Exception{
 		
 		String version = "Version 0.6.1";
-		String consoleArgs = "-version";
+		String consoleArgs[] = {"-version"};
 		
 		//create a BufferedReader using System.in
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
