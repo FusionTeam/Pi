@@ -7,6 +7,7 @@ import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.Writer;
 
 public class WritePiToFile extends FileOutputStream{
 
@@ -14,12 +15,14 @@ public class WritePiToFile extends FileOutputStream{
 		super(fileName, append);
 	}
 	
-	public static void WritePi(){
+	public static void writePi(){
 	try
     {
-    BufferedWriter bw = new BufferedWriter(new FileWriter("E:\\pinumber\\pi.txt"));
-    bw.write(String.valueOf(pi(InputFromUser)));
-    bw.close();
+	Writer w = new BufferedWriter(new FileWriter("C:\\data\\pitothe" + Main.InputFromUser + "thdigit.txt"));
+    
+	w.write("" + pi(InputFromUser));
+	w.close();
+	
     }
     catch(IOException e)
     {
