@@ -44,7 +44,7 @@ public class PiMeth {
 	BigDecimal sum = unity.divide(x, RoundingMode.DOWN);
 	BigDecimal xpower = new BigDecimal(sum.toString());
 	BigDecimal term = null;
-
+	
 	boolean add = false;
 
 	for (BigDecimal n = new BigDecimal("3"); term == null ||
