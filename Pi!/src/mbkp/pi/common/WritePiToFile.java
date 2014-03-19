@@ -3,6 +3,7 @@ package mbkp.pi.common;
 /**
  * @author Max
  */
+
 import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -11,18 +12,33 @@ import java.io.Writer;
 
 public class WritePiToFile extends FileOutputStream{
 
+	static String fileNametxt = "C:\\data\\pitothe" + Main.InputFromUser + "thdigit.txt";
+	
 	public WritePiToFile(String fileName, boolean append) throws FileNotFoundException {
 		super(fileName, append);
+	}
+	
+	public static void recordFilesCreated(){
+		try{
+			Writer w = new BufferedWriter(new FileWriter("C:\\data\\filesCreated.txt"));
+			
+			w.write(fileNametxt);
+			w.close();
+			
+		}catch(IOException e){
+			System.out.println("IOException: " + e);
+		}
 	}
 	
 	public static void writePi(){
 	try
     {
-	Writer w = new BufferedWriter(new FileWriter("C:\\data\\pitothe" + Main.InputFromUser + "thdigit.txt"));
+	Writer w = new BufferedWriter(new FileWriter(fileNametxt));
     
 	w.write("" + pi(InputFromUser));
 	w.close();
 	
+	recordFilesCreated();
     }
     catch(IOException e)
     {
