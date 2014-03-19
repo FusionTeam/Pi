@@ -10,7 +10,6 @@ import java.math.RoundingMode;
 public class PiMeth {
 	
 	double pi; 
-	float circum, diameter;
 	public static int InputFromUser;
 	
 	double getPi(){
