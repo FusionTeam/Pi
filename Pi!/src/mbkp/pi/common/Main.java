@@ -20,24 +20,32 @@ public class Main extends WritePiToFile{
 	public static void main(String[] args) throws IOException, Exception{
 		
 		String version = "Version 0.6.3";
-		String consoleArgs[] = {"-version"};
+		String consoleArgs[] = new String[] {"-version", "-filescreated"};
+		String filescreated = readFile("C:\\data\\filescreated.txt");
 		
 		//create a BufferedReader using System.in
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
-		System.out.println("args are -version, null");
+		System.out.println("args are -version, -filescreated, null");
 		System.out.println("How many digits of pi would you like to print?");
-		System.out.println("Maximum is 4679 as of "+ version);
+		System.out.println("Maximum is 4679 as of version 0.6.2 \nEDIT: Fixed with version 0.6.3, just cant see in console\nCheck file for full in C:\\data");
 		rawInput = br.readLine();
 		try{
 			InputFromUser = Integer.parseInt(rawInput);
 		}catch(NumberFormatException exc){
+			
 			if(!rawInput.equals("-version")){
 			System.out.println("Number Format Exception; Invalid Format." + exc);
 			}
-			if(InputFromUser < 1 && !rawInput.equals(consoleArgs)){
-				throw new Exception("Input cannot be less than 1!!!");
+			
+			if(InputFromUser < 1 ){
+				int n = 0;
+				while(n <= consoleArgs.length) n = n++;
+				if(!rawInput.equals(consoleArgs[n])){
+					throw new Exception("Input cannot be less than 1!!!");
+				}
 			}
+			
 			InputFromUser = 0;
 		}
 		//4679 is highest
@@ -45,6 +53,9 @@ public class Main extends WritePiToFile{
 		writePi();
 		if(rawInput.equals("-version")){
 			System.out.println(version);
+		}
+		if(rawInput.equals("-filescreated")){
+			System.out.println(filescreated);
 		}
 
 	}

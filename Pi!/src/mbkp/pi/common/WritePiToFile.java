@@ -10,19 +10,20 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
 
-public class WritePiToFile extends FileOutputStream{
+public class WritePiToFile extends PiMeth{
 
-	static String fileNametxt = "C:\\data\\pitothe" + Main.InputFromUser + "thdigit.txt";
+	public static String txtName = "pitothe" + Main.InputFromUser + "thdigit.txt";
+	public static String fileNametxt = "C:\\data\\" + txtName;
 	
 	public WritePiToFile(String fileName, boolean append) throws FileNotFoundException {
-		super(fileName, append);
+		super();
 	}
 	
 	public static void recordFilesCreated(){
 		try{
 			Writer w = new BufferedWriter(new FileWriter("C:\\data\\filesCreated.txt"));
 			
-			w.write(fileNametxt);
+			w.write(txtName + ", ");
 			w.close();
 			
 		}catch(IOException e){
@@ -45,6 +46,7 @@ public class WritePiToFile extends FileOutputStream{
         System.out.println("IOException: "+e);
     }
 	}
+	
 	/*{
 	
 		try{

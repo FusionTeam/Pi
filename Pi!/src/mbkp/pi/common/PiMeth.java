@@ -4,12 +4,16 @@ package mbkp.pi.common;
  * @author Max
  */
 
+import java.io.File;
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.Scanner;
 
 public class PiMeth {
 	
 	double pi; 
+	float circum, diameter;
 	public static int InputFromUser;
 	
 	double getPi(){
@@ -55,6 +59,23 @@ public class PiMeth {
 	  add = ! add;
 	}
 	return sum;
+	}
+	
+	public static String readFile(String pathname) throws IOException {
+
+		    File file = new File(pathname);
+		    StringBuilder fileContents = new StringBuilder((int)file.length());
+		    Scanner scanner = new Scanner(file);
+		    String lineSeparator = System.getProperty("line.separator");
+
+		    try {
+		        while(scanner.hasNextLine()) {        
+		            fileContents.append(scanner.nextLine() + lineSeparator);
+		        }
+		        return fileContents.toString();
+		    } finally {
+		        scanner.close();
+		    }
 	}
 
 }
