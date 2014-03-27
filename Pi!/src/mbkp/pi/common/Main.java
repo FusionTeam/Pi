@@ -40,7 +40,7 @@ public class Main extends WritePiToFile{
 			System.out.println("Number Format Exception; Invalid Format." + exc);
 			}
 			
-			if(InputFromUser < 1){
+			if(InputFromUser < 1 && !(InputFromUser < 999999999)){
 				if(!rawInput.equals("-version") && !rawInput.equals("-filescreated")){
 					throw new Exception("Input cannot be less than 1!!!");
 				}

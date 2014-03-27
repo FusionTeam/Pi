@@ -27,11 +27,9 @@ public class GZipFile
  
      try{
  
-    	GZIPOutputStream gzos = 
-    		new GZIPOutputStream(new FileOutputStream(OutputGZIPFile));
+    	GZIPOutputStream gzos = new GZIPOutputStream(new FileOutputStream(OutputGZIPFile));
  
-        FileInputStream in = 
-            new FileInputStream(SourceFile);
+        FileInputStream in = new FileInputStream(SourceFile);
  
         int len;
         while ((len = in.read(buffer)) > 0) {
@@ -39,7 +37,7 @@ public class GZipFile
         }
  
         in.close();
- 
+        
     	gzos.finish();
     	gzos.close();
  
