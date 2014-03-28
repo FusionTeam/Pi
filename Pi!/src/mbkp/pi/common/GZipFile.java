@@ -5,14 +5,12 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.zip.GZIPOutputStream;
  
-public class GZipFile
-{
-    private static final String OutputGZIPFile = "";
-    private static final String SourceFile = "";
+public class GZipFile{
+	
+		private static final String OutputGZIPFile = Main.filedatadir + "txtName";
+    	private static final String SourceFile = WritePiToFile.fileNametxt;
  
- 
-    public static void main( String[] args )
-    {
+    public static void main( String[] args ){
     	GZipFile gZip = new GZipFile();
     	gZip.gzipIt();
     }
@@ -23,29 +21,29 @@ public class GZipFile
      */
     public void gzipIt(){
  
-     byte[] buffer = new byte[1024];
+    	byte[] buffer = new byte[1024];
  
-     try{
+    	try{
  
-    	GZIPOutputStream gzos = new GZIPOutputStream(new FileOutputStream(OutputGZIPFile));
+    		GZIPOutputStream gzos = new GZIPOutputStream(new FileOutputStream(OutputGZIPFile));
  
-        FileInputStream in = new FileInputStream(SourceFile);
+    		FileInputStream in = new FileInputStream(SourceFile);
  
-        int len;
-        while ((len = in.read(buffer)) > 0) {
-        	gzos.write(buffer, 0, len);
-        }
+    		int len;
+    		while ((len = in.read(buffer)) > 0) {
+    			gzos.write(buffer, 0, len);
+    		}
  
-        in.close();
-        
-    	gzos.finish();
-    	gzos.close();
+    		in.close();
+       
+    		gzos.finish();
+    		gzos.close();
  
-    	System.out.println("Done");
+    		System.out.println("Done");
  
-    }catch(IOException ex){
+    	}catch(IOException ex){
        ex.printStackTrace();   
-    }
+    	}
    }
  
 }

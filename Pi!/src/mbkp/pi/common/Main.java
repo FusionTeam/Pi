@@ -12,6 +12,9 @@ import java.io.InputStreamReader;
 public class Main extends WritePiToFile{
 	
 	public static String rawInput;
+	public static String version = "Version 0.6.3";
+	public static String filedatadir = "C:\\data\\";
+	
 	
 	public Main(String fileName, boolean append) throws FileNotFoundException {
 		super(fileName, append);
@@ -19,9 +22,8 @@ public class Main extends WritePiToFile{
 	
 	public static void main(String[] args) throws IOException, Exception{
 		
-		String version = "Version 0.6.3";
 		//String consoleArgs[] = new String[] {"-version", "-filescreated"}; unused
-		String filescreated = readFile("C:\\data\\filescreated.txt");
+		String filescreated = readFile(filedatadir + "filescreated.txt");
 		
 		//create a BufferedReader using System.in
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

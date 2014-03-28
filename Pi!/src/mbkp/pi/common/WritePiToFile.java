@@ -14,7 +14,7 @@ import java.io.Writer;
 public class WritePiToFile extends PiMeth{
 
 	public static String txtName = "pitothe" + Main.InputFromUser + "thdigit.txt";
-	public static String fileNametxt = "C:\\data\\" + txtName;
+	public static String fileNametxt = Main.filedatadir + txtName;
 	
 	public WritePiToFile(String fileName, boolean append) throws FileNotFoundException {
 		super();
