@@ -30,19 +30,17 @@ public class WritePiToFile extends PiMeth{
 	}
 	
 	public static void writePi(){
-	try
-    {
+	try{
 	Writer w = new BufferedWriter(new FileWriter(Obs.fileNametxt));
     
 	w.write("" + pi(InputFromUser));
 	w.close();
 	
 	recordFilesCreated();
-    }
-    catch(IOException e)
-    {
-        System.out.println("IOException: "+e);
-    }
+	gzipIt();
+    	}catch(IOException e){
+        	System.out.println("IOException: "+e);
+    	}
 	}
 	
 	/*{

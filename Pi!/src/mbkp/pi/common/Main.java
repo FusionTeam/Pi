@@ -26,12 +26,17 @@ public class Main extends WritePiToFile{
 		//create a BufferedReader using System.in
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
+		//Set the rawInput variable
+		rawInput = br.readLine();
+		
+		//Print to the console
 		System.out.println("args are -version, -filescreated, null");
 		System.out.println("How many digits of pi would you like to print?");
 		System.out.println("Maximum is 4679 as of version 0.6.2"
 				+ "\nEDIT: Fixed with version 0.6.3, just cant see in console"
 				+ "\nCheck file for full in C:\\data");
-		rawInput = br.readLine();
+		
+		//set the input to an int and return an error unless some things are some things
 		try{
 			InputFromUser = Integer.parseInt(rawInput);
 		}catch(NumberFormatException exc){
@@ -48,11 +53,12 @@ public class Main extends WritePiToFile{
 			
 			InputFromUser = 0;
 		}
-		//4679 is highest
+		//call methods
 		printPi();
 		writePi();
     	//GZipFile gZip = new GZipFile();
     	//gZip.gzipIt();
+		//Print to the console under certain circumstances
 		if(rawInput.equals("-version")){
 			System.out.println(Obs.version);
 		}
@@ -61,7 +67,7 @@ public class Main extends WritePiToFile{
 		}
 
 	}
-	
+	//Set the printPi method to printing pi()
 	public static void printPi(){
 		System.out.println(pi(InputFromUser));
 	}
