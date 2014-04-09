@@ -12,9 +12,6 @@ import java.io.InputStreamReader;
 public class Main extends WritePiToFile{
 	
 	public static String rawInput;
-	public static String version = "Version 0.6.3";
-	public static String filedatadir = "C:\\data\\";
-	
 	
 	public Main(String fileName, boolean append) throws FileNotFoundException {
 		super(fileName, append);
@@ -23,7 +20,7 @@ public class Main extends WritePiToFile{
 	public static void main(String[] args) throws IOException, Exception{
 		
 		//String consoleArgs[] = new String[] {"-version", "-filescreated"}; unused
-		String filescreated = readFile(filedatadir + "filescreated.txt");
+		String filescreated = readFile(Obs.filedatadir + "filescreated.txt");
 		
 		//create a BufferedReader using System.in
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -53,8 +50,10 @@ public class Main extends WritePiToFile{
 		//4679 is highest
 		printPi();
 		writePi();
+    	//GZipFile gZip = new GZipFile();
+    	//gZip.gzipIt();
 		if(rawInput.equals("-version")){
-			System.out.println(version);
+			System.out.println(Obs.version);
 		}
 		if(rawInput.equals("-filescreated")){
 			System.out.println(filescreated);

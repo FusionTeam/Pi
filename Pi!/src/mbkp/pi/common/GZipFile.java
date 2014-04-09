@@ -7,27 +7,20 @@ import java.util.zip.GZIPOutputStream;
  
 public class GZipFile{
 	
-		private static final String OutputGZIPFile = Main.filedatadir + "txtName";
-    	private static final String SourceFile = WritePiToFile.fileNametxt;
- 
-    public static void main( String[] args ){
-    	GZipFile gZip = new GZipFile();
-    	gZip.gzipIt();
-    }
- 
     /**
      * GZip it
      * @param zipFile output GZip file location
      */
+    
     public void gzipIt(){
  
     	byte[] buffer = new byte[1024];
  
     	try{
  
-    		GZIPOutputStream gzos = new GZIPOutputStream(new FileOutputStream(OutputGZIPFile));
+    		GZIPOutputStream gzos = new GZIPOutputStream(new FileOutputStream(Obs.OutputGZIPFile));
  
-    		FileInputStream in = new FileInputStream(SourceFile);
+    		FileInputStream in = new FileInputStream(Obs.SourceFile);
  
     		int len;
     		while ((len = in.read(buffer)) > 0) {

@@ -1,4 +1,3 @@
-
 package mbkp.pi.common;
 
 /**
@@ -10,11 +9,9 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
+import mbkp.pi.common.PiMeth;
 
 public class WritePiToFile extends PiMeth{
-
-	public static String txtName = "pitothe" + Main.InputFromUser + "thdigit.txt";
-	public static String fileNametxt = Main.filedatadir + txtName;
 	
 	public WritePiToFile(String fileName, boolean append) throws FileNotFoundException {
 		super();
@@ -24,7 +21,7 @@ public class WritePiToFile extends PiMeth{
 		try{
 			Writer w = new BufferedWriter(new FileWriter("C:\\data\\filesCreated.txt"));
 			
-			w.write(txtName + ", ");
+			w.write(Obs.txtName + ", ");
 			w.close();
 			
 		}catch(IOException e){
@@ -35,7 +32,7 @@ public class WritePiToFile extends PiMeth{
 	public static void writePi(){
 	try
     {
-	Writer w = new BufferedWriter(new FileWriter(fileNametxt));
+	Writer w = new BufferedWriter(new FileWriter(Obs.fileNametxt));
     
 	w.write("" + pi(InputFromUser));
 	w.close();
