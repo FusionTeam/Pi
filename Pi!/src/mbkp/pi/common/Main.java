@@ -56,8 +56,9 @@ public class Main extends WritePiToFile{
 		//call methods
 		printPi();
 		writePi();
-    	//GZipFile gZip = new GZipFile();
-    	//gZip.gzipIt();
+    	//GZipFile gZip = new GZipFile(); unused
+    	//gZip.gzipIt(); unused
+		
 		//Print to the console under certain circumstances
 		if(rawInput.equals("-version")){
 			System.out.println(Obs.version);
@@ -67,7 +68,7 @@ public class Main extends WritePiToFile{
 		}
 
 	}
-	//Set the printPi method to printing pi()
+	//Set the printPi() method to printing pi()
 	public static void printPi(){
 		System.out.println(pi(InputFromUser));
 	}

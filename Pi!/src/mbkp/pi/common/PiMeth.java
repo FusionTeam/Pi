@@ -2,6 +2,7 @@ package mbkp.pi.common;
 
 /**
  * @author Max
+ * Contains nearly all methods in the program
  */
 
 import java.io.File;
