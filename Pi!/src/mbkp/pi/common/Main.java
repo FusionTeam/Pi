@@ -9,7 +9,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class Main extends WritePiToFile{
+public class Main extends PiMeth{
 	
 	public static String rawInput;
 	public static int InputFromUser;

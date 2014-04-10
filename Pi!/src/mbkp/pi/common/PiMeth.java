@@ -5,10 +5,13 @@ package mbkp.pi.common;
  * Contains nearly all methods in the program
  */
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.Writer;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.Scanner;
@@ -33,7 +36,7 @@ public class PiMeth {
 	private static final BigDecimal FIVE = new BigDecimal("5");
 	private static final BigDecimal TWO_THIRTY_NINE = new BigDecimal("239");
 
-	protected PiMeth() {}
+	protected PiMeth(String fileName, boolean append) {}
 
 	public static BigDecimal pi(int numDigits) {
 
@@ -114,5 +117,31 @@ public class PiMeth {
        ex.printStackTrace();   
     	}
    }
+	
+	public static void recordFilesCreated(){
+		try{
+			Writer w = new BufferedWriter(new FileWriter("C:\\data\\filesCreated.txt"));
+			
+			w.write(Obs.txtName + ", ");
+			w.close();
+			
+		}catch(IOException e){
+			System.out.println("IOException: " + e);
+		}
+	}
+	
+	public static void writePi(){
+	try{
+	Writer w = new BufferedWriter(new FileWriter(Obs.fileNametxt));
+    
+	w.write("" + pi(InputFromUser));
+	w.close();
+	
+	recordFilesCreated();
+	gzipIt();
+    	}catch(IOException e){
+        	System.out.println("IOException: "+e);
+    	}
+	}
 	
 }
