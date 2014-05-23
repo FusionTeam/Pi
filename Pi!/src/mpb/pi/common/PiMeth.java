@@ -1,21 +1,14 @@
-package mbkp.pi.common;
+package mpb.pi.common;
 
 /**
  * @author Max
- * Contains nearly all methods in the program
  */
 
-import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.io.Writer;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.Scanner;
-import java.util.zip.GZIPOutputStream;
 
 public class PiMeth {
 	
@@ -36,7 +29,7 @@ public class PiMeth {
 	private static final BigDecimal FIVE = new BigDecimal("5");
 	private static final BigDecimal TWO_THIRTY_NINE = new BigDecimal("239");
 
-	protected PiMeth(String fileName, boolean append) {}
+	protected PiMeth() {}
 
 	public static BigDecimal pi(int numDigits) {
 
@@ -83,65 +76,6 @@ public class PiMeth {
 		    } finally {
 		        scanner.close();
 		    }
-	}
-	
-
-    /**
-     * GZip it
-     * @param zipFile output GZip file location
-     */
-    
-    public static void gzipIt(){
- 
-    	byte[] buffer = new byte[1024];
- 
-    	try{
- 
-    		GZIPOutputStream gzos = new GZIPOutputStream(new FileOutputStream(Obs.OutputGZIPFile));
- 
-    		FileInputStream in = new FileInputStream(Obs.SourceFile);
- 
-    		int len;
-    		while ((len = in.read(buffer)) > 0) {
-    			gzos.write(buffer, 0, len);
-    		}
- 
-    		in.close();
-       
-    		gzos.finish();
-    		gzos.close();
- 
-    		System.out.println("Done");
- 
-    	}catch(IOException ex){
-       ex.printStackTrace();   
-    	}
-   }
-	
-	public static void recordFilesCreated(){
-		try{
-			Writer w = new BufferedWriter(new FileWriter("C:\\data\\filesCreated.txt"));
-			
-			w.write(Obs.txtName + ", ");
-			w.close();
-			
-		}catch(IOException e){
-			System.out.println("IOException: " + e);
-		}
-	}
-	
-	public static void writePi(){
-	try{
-	Writer w = new BufferedWriter(new FileWriter(Obs.fileNametxt));
-    
-	w.write("" + pi(InputFromUser));
-	w.close();
-	
-	recordFilesCreated();
-	gzipIt();
-    	}catch(IOException e){
-        	System.out.println("IOException: "+e);
-    	}
 	}
 	
 }

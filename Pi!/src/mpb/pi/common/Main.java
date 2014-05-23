@@ -1,4 +1,4 @@
-package mbkp.pi.common;
+package mpb.pi.common;
 
 /**
  * @author Max
@@ -9,7 +9,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class Main extends PiMeth{
+public class Main extends WritePiToFile{
 	
 	public static String rawInput;
 	public static int InputFromUser;
@@ -56,9 +56,7 @@ public class Main extends PiMeth{
 		//call methods
 		printPi();
 		writePi();
-    	//GZipFile gZip = new GZipFile(); unused
-    	//gZip.gzipIt(); unused
-		
+    	GZipFile.gzipIt();
 		//Print to the console under certain circumstances
 		if(rawInput.equals("-version")){
 			System.out.println(Obs.version);
@@ -68,7 +66,7 @@ public class Main extends PiMeth{
 		}
 
 	}
-	//Set the printPi() method to printing pi()
+	//Set the printPi method to printing pi()
 	public static void printPi(){
 		System.out.println(pi(InputFromUser));
 	}

@@ -1,4 +1,4 @@
-package mbkp.pi.common;
+package mpb.pi.common;
 
 public class Obs {
 	
