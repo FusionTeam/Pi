@@ -11,9 +11,10 @@ import java.io.InputStreamReader;
 
 public class Main extends WritePiToFile{
 	
+	
 	public static String rawInput;
 	public static int InputFromUser;
-	
+
 	public Main(String fileName, boolean append) throws FileNotFoundException {
 		super(fileName, append);
 	}
